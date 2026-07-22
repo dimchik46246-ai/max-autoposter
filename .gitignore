@@ -1,0 +1,11 @@
+.env
+
+downloads/
+
+logs/
+
+profiles/
+
+__pycache__/
+
+*.pyc
