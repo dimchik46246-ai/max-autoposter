@@ -21,8 +21,12 @@ class TelegramBrowser:
 
         self.context = await self.playwright.chromium.launch_persistent_context(
             user_data_dir=str(profile),
-            headless=False,
-            viewport={"width": 1500, "height": 900},
+            headless=True,
+            viewport={"width":1500,"height":900},
+            args=[
+                "--no-sandbox",
+                "--disable-dev-shm-usage"
+            ]
         )
 
         self.page = self.context.pages[0] if self.context.pages else await self.context.new_page()
